@@ -1,6 +1,3 @@
-window.onload = function(){
-    // your javascript code goes here...
-
 const qrcode = window.qrcode;
 
 const video = document.createElement("video");
@@ -59,4 +56,3 @@ function scan() {
     setTimeout(scan, 300);
   }
 }
-};
