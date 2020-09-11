@@ -1,5 +1,3 @@
-window.onload = function(){
-  
 /* Packed with Google Closure
 *
 * Ported to JavaScript by Lazar Laszlo 2011 
@@ -108,18 +106,16 @@ a)throw"point error";if(g.height<b)throw"point error";var e=4*a+b*g.width*4;retu
 0;k<c;k++)for(var n=0;n<d;n++)f[d*m+n+(c*h+k)*g.width]=a[d*m+n+(c*h+k)*g.width]<b[m][h]?!0:!1;return f},grayscale:function(){for(var a=new ArrayBuffer(g.width*g.height),a=new Uint8Array(a),b=0;b<g.height;b++)for(var e=0;e<g.width;e++){var d=g.getPixel(e,b);a[e+b*g.width]=d}return a}},L=3,W=57,D=8,K=2;g.orderBestPatterns=function(a){function b(a,b){var c=a.X-b.X,d=a.Y-b.Y;return Math.sqrt(c*c+d*d)}var e=b(a[0],a[1]),d=b(a[1],a[2]),c=b(a[0],a[2]);d>=e&&d>=c?(d=a[0],e=a[1],c=a[2]):c>=d&&c>=e?(d=a[1],
 e=a[0],c=a[2]):(d=a[2],e=a[0],c=a[1]);if(0>function(a,b,c){var d=b.x;b=b.y;return(c.x-d)*(a.y-b)-(c.y-b)*(a.x-d)}(e,d,c))var f=e,e=c,c=f;a[0]=e;a[1]=d;a[2]=c};return g}();
 
+window.onload = function(){
 const qrcode = window.qrcode;
-
 const video = document.createElement("video");
 const canvasElement = document.getElementById("qr-canvas");
 const canvas = canvasElement.getContext("2d");
-
 const qrResult = document.getElementById("qr-result");
 const outputData = document.getElementById("outputData");
 const btnScanQR = document.getElementById("btn-scan-qr");
 
 let scanning = false;
-
 qrcode.callback = res => {
   if (res) {
     outputData.innerText = res;
@@ -166,6 +162,5 @@ function scan() {
     setTimeout(scan, 300);
   }
 }
-
 
 };
